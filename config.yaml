@@ -1,0 +1,26 @@
+ep endpoint: 
+x_token: 
+wallets: []
+window_secs: 604800
+commitment: confirmed
+max_msg_mb: 64
+allow_failed: false
+summary_secs: 5
+output_ndjson: false
+ndjson_profile: full        # compact|full
+ndjson_fields: [wallet, pnl, trades, tx60]  # only used when profile=compact
+webhook_url: null
+webhook_buffer: 1000
+from_slot: null
+min_delta_lamports: 50000
+exclude_fee_only: true
+enable_gzip: false
+enable_zstd: false
+alert_pnl_up_sol: null
+alert_pnl_down_sol: null
+auto_replay_deepen: true
+replay_deepen_slots: 2000000
+deepen_ticks: 10
+endpoints: []                # optional alternates for failover
+metrics_bind: "0.0.0.0:9464" # serve /metrics (Prometheus)
+no_color: false

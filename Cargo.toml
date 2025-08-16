@@ -1,0 +1,40 @@
+[package]
+name = "wallet-tracker"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "sync", "net", "io-util"] }
+clap = { version = "4", features = ["derive", "env"] }
+dotenvy = "0.15"
+ahash = "0.8"
+parking_lot = "0.12"
+bs58 = "0.5"
+humantime = "2.1"
+owo-colors = "4"
+time = { version = "0.3", features = ["formatting"] }
+http = "1"
+thiserror = "1"
+anyhow = "1"
+tokio-stream = "0.1"
+futures-util = "0.3"
+serde = { version = "1", features = ["derive"] }
+serde_yaml = "0.9"
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls"] }
+bytemuck = { version = "1", features = ["derive"] }
+smallvec = "1"
+
+yellowstone-grpc-proto = "9"
+yellowstone-grpc-client = "9"
+tonic = { version = "0.14", features = ["transport", "channel", "tls-native-roots", "tls-webpki-roots", "zstd", "gzip"] }
+prost = "0.14"
+
+prometheus = "0.14.0"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "z"
+strip = true
+panic = "abort"
